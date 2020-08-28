@@ -1,7 +1,7 @@
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 
-var db = require("../models");
+var db = require("../models/log");
 
 // Telling passport we want to use a Local Strategy. 
 passport.use(new LocalStrategy(
