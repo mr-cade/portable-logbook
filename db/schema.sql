@@ -4,7 +4,7 @@ USE portableLog_db;
 -- If the table already exists, remove it before trying to create the table again
 DROP TABLE IF EXISTS logbook;
 
--- Create the burgers table
+-- Create the logbook table
 CREATE TABLE logbook (
     id int NOT NULL AUTO_INCREMENT,
     contactTime time NOT NULL,
