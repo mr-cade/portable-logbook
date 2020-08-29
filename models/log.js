@@ -1,6 +1,6 @@
 var Sequelize = require("sequelize")
 
-require("./routes/html-routes.js")(app);
+require("../routes/html-routes.js");
 
 module.exports = function(sequelize, DataTypes) {
     var Callsign = sequelize.define("Callsign", {
