@@ -3,16 +3,14 @@ var Sequelize = require("sequelize")
 require("../routes/html-routes.js");
 
 module.exports = function(sequelize, DataTypes) {
-    var Callsign = sequelize.define("Callsign", {
-      name: DataTypes.STRING
+    var Contact = sequelize.define("Contact", {
+      contactTime: DataTypes.TIME,
+      callsign: DataTypes.STRING,
+      signalIn: DataTypes.INTEGER,
+      signalOut: DataTypes.INTEGER,
+      contactName: DataTypes.STRING,
+      contactNotes: DataTypes.STRING
     });
-  
-    // Callsign.associate = function(models) {
-    //   Author.hasMany(models.Post, {
-    //     onDelete: "cascade"
-    //   });
-    // };
-  
-    // return Author;
+    return Contact
   };
   

@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS logbook;
 -- Create the logbook table
 CREATE TABLE logbook (
     id int NOT NULL AUTO_INCREMENT,
-    contactTime time NOT NULL,
+    contactTime TIME NOT NULL,
     callsign VARCHAR (7),
     signalIn INTEGER (2),
     signalOut INTEGER (2),
