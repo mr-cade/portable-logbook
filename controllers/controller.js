@@ -9,10 +9,10 @@ router.get("/", function(req, res) {
 });
 
 router.get("/logbook", function(req, res) {
-  logbook.all(function(logbook) {
+//   logbook.all(function(logbook) {
     
-    res.render("index.handlebars", { logbook_data: logbook });
+    res.render("../public/index.html", { logbook_data: logbook });
   });
-});
+;
 
 module.exports = router;

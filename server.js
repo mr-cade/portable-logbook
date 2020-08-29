@@ -1,5 +1,6 @@
 var express = require("express");
 var passport = require("./config/passport");
+var db = require("./models")
 
 var PORT = process.env.PORT || 8000;
 var app = express();
@@ -19,8 +20,11 @@ app.use(passport.session());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var connection = require("./config/connection.js")
+var connection = require("./config/config.json")
 var routes = require("./controllers/controller.js");
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
+
 
 app.use(routes);
 
