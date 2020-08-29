@@ -1,5 +1,7 @@
 var express = require("express");
 var passport = require("./config/passport");
+var session = require("express-session");
+
 var db = require("./models")
 
 var PORT = process.env.PORT || 8000;
@@ -14,6 +16,7 @@ app.use(express.json());
 
 var exphbs = require("express-handlebars");
 
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
