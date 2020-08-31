@@ -11,6 +11,7 @@ CREATE TABLE logbook (
     callsign VARCHAR (7),
     signalIn INTEGER (2),
     signalOut INTEGER (2),
+    frequency DECIMAL (3),
     contactName VARCHAR (40),
     contactLocation VARCHAR (40),
     contactNotes VARCHAR (250),
