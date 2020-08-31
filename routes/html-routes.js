@@ -13,7 +13,7 @@ module.exports = function(app) {
 // }
 
     // res.send('Hi Hello How are ya')
-    res.sendFile(path.join(__dirname, "../public", "signup.html"));
+    res.sendFile(path.join(__dirname, "../Public", "signup.html"));
   });
     // res.sendFile(path.join("./public/signup.html"));
 
@@ -22,14 +22,14 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "/public/login.html"));
+    res.sendFile(path.join(__dirname, "/Public/login.html"));
 
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
+    res.sendFile(path.join(__dirname, "../Public/members.html"));
   });
 
 };
