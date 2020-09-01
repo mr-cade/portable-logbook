@@ -16,13 +16,12 @@ module.exports = function (app) {
     });
     // res.sendFile(path.join("./public/signup.html"));
 
-    app.get("/", function (req, res) {
+    app.get("/signup", function (req, res) {
         //  If the user already has an account send them to the members page
         if (req.user) {
             res.redirect("/members");
         }
         // res.send('Hi Hello How are ya')
-        res.sendFile(path.join(__dirname, "../Public", "signup.html"));
     });
 
     app.get("/login", function (req, res) {
