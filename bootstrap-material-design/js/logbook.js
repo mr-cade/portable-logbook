@@ -85,3 +85,9 @@ const $tableID = $('#table');
    // Output the result
    $EXPORT.text(JSON.stringify(data));
  });
+
+ // PAGINATION
+ $(document).ready(function () {
+    $('#dataTable-1').DataTable();
+    $('.dataTables_length').addClass('bs-select');
+  });
