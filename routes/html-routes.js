@@ -11,7 +11,7 @@ module.exports = function (app) {
         if (req.user) {
             res.redirect("/members");
         }
-        res.sendFile(path.join(__dirname, "../bootstrap-material-design", "index.html"));
+        res.sendFile(path.join(__dirname, "../public", "index.html"));
     });
     // res.sendFile(path.join("./public/signup.html"));
 
@@ -37,5 +37,4 @@ module.exports = function (app) {
     app.get("/members", isAuthenticated, function (req, res) {
         res.sendFile(path.join(__dirname, "../public", "members.html"));
     });
-
 };

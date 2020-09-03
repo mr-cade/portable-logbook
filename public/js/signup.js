@@ -13,10 +13,10 @@ $(document).ready(function() {
       };
   
       if (!userData.email || !userData.password) {
-        return;
+        return alert("Please enter valid email and password");
       }
       // If we have an email and password, run the signUpUser function
-      signUpUser(userData.email, userData.password);
+      signUpUser(userData.email, userData.password);  
       emailInput.val("");
       passwordInput.val("");
     });
@@ -38,6 +38,9 @@ $(document).ready(function() {
     function handleLoginErr(err) {
       $("#alert .msg").text(err.responseJSON);
       $("#alert").fadeIn(500);
+      alert("already a user. Please login.")
+      window.location.replace("/login");
+
     }
   });
   
