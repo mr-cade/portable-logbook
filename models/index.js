@@ -6,6 +6,7 @@ const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
+const isAuthenticated = require("../config/middleware/isAuthenticated.js")
 const db = {};
 
 let sequelize;
@@ -14,6 +15,14 @@ if (config.use_env_variable) {
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
+
+$(document).ready(function(){
+if(isAuthenticated) {
+    $(".nav-login").innerHTML("Profile")
+  } else {
+    $(".nav-login").innerHTML("Login")
+  };
+});
 
 fs
   .readdirSync(__dirname)
