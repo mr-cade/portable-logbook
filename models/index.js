@@ -16,13 +16,13 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
-$(document).ready(function(){
-if(isAuthenticated) {
-    $(".nav-login").innerHTML("Profile")
-  } else {
-    $(".nav-login").innerHTML("Login")
-  };
-});
+// $(document).ready(function(){
+// if(isAuthenticated) {
+//     $(".nav-login").innerHTML("Profile")
+//   } else {
+//     $(".nav-login").innerHTML("Login")
+//   };
+// });
 
 fs
   .readdirSync(__dirname)
