@@ -3,19 +3,15 @@ const $tableID = $('#table');
  const $EXPORT = $('#export');
 
  const newTr = `
-<tr class="hide">
-  <td class="pt-3-half" contenteditable="true">Example</td>
-  <td class="pt-3-half" contenteditable="true">Example</td>
-  <td class="pt-3-half" contenteditable="true">Example</td>
-  <td class="pt-3-half" contenteditable="true">Example</td>
-  <td class="pt-3-half" contenteditable="true">Example</td>
-  <td class="pt-3-half">
-    <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up" aria-hidden="true"></i></a></span>
-    <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down" aria-hidden="true"></i></a></span>
-  </td>
-  <td>
-    <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0 waves-effect waves-light">Remove</button></span>
-  </td>
+ <tr class="hide">
+    <td class="pt-3-half" contenteditable="true"></td>
+    <td class="pt-3-half" contenteditable="true"></td>
+    <td class="pt-3-half" contenteditable="true"></td>
+    <td class="pt-3-half" contenteditable="true"></td>
+    <td class="pt-3-half" contenteditable="true"></td>
+    <td class="pt-3-half" contenteditable="true"></td>
+    <td class="pt-3-half" contenteditable="true"></td>
+    <td class="pt-3-half" contenteditable="true"></td>
 </tr>`;
 
  $('.table-add').on('click', 'i', () => {

@@ -1,0 +1,75 @@
+html,
+body,
+header,
+.view {
+  height: 100%;
+}
+
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 100vh;
+  }
+}
+
+
+.top-nav-collapse {
+  background-color: #78909c !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+
+.nav-link.nav-login {
+    margin-right: 15px;
+} 
+
+.nav-link.nav-signup {
+    margin-left: 13px;
+    margin-right: 10px;
+}
+
+.vertical {
+    border-left: 2px solid white; 
+    height: 55px; 
+    position: absolute; 
+}
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #78909c !important;
+  }
+}
+
+.row.row-content {
+    margin-top: 250px;
+}
+
+.col-md-12.mb-4.white-text.text-center {
+    margin-top: -150px;
+}
+
+h2 {
+    letter-spacing: 6px;
+}
+
+h1 {
+  letter-spacing: 8px;
+  margin-left: 10px;
+}
+
+h5 {
+  letter-spacing: 2px;
+}
+
+.hr-light {
+  border-top: 3px solid #fff;
+  width: 80px;
+}
+
+.col-xl-5.col-lg-6.col-md-10.col-sm-12.mx-auto {
+    margin-top: 125px;
+}
