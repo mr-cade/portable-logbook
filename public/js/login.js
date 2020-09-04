@@ -34,6 +34,7 @@ $(document).ready(function() {
         })
         .catch(function(err) {
           console.log(err);
+          alert("No user found. Please check your login information or signup for a free account.");
         });
     }
   });
