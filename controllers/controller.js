@@ -11,7 +11,7 @@ router.get("/", function(req, res) {
 router.get("/logbook", function(req, res) {
 //   logbook.all(function(logbook) {
     
-    res.render("../public/index.html", { logbook_data: logbook });
+    res.render("../bootstrap-material-design/index.html", { logbook_data: logbook });
   });
 ;
 
