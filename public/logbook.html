@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Ham Radio Logbook</title>
-  <!-- MDB icon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+  
   <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Google Fonts Roboto -->
@@ -17,6 +16,8 @@
     <link rel="stylesheet" href="css/mdb.min.css">
   <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="./css/logbook.css">
+  <!-- MDBootstrap Datatables  -->
+  <link href="css/addons/datatables.min.css" rel="stylesheet">
 
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
@@ -52,80 +53,120 @@
 <body>
 
 
-    <!--Table-->
-    <div class="container-lg">
-        <table id="tablePreview" class="table-responsive-lg">
-            <!--Table head-->
-            <thead>
-                <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
-                <th>Visits</th>
-                <th>Age</th>
-                <th>Country</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
-                <th>Visits</th>
-                <th>Age</th>
-                <th>Country</th>
-                </tr>
-            </thead>
-            <!--Table head-->
-            <!--Table body-->
-            <tbody>
-                <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                </tr>
-                <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                </tr>
-                <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                </tr>
-            </tbody>
-            <!--Table body-->
-            </table>
-            <!--Table-->
+<!--Table-->
+    
+    <!-- <div class="table-responsive">
+    <div class="container-fluid container-1"> -->
+
+
+<!-- Editable table -->
+
+  <div class="card z-depth-5 card-main">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4 morpheus-den-gradient">Logbook</h3>
+    <div class="card-body">
+      <div id="table" class="table-editable">
+        <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+              class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
+        <table id="dataTable-1" class="table table-bordered table-responsive-md table-striped text-center">
+          <thead>
+            <tr>
+              <th class="text-center">Operator Name</th>
+              <th class="text-center">Date</th>
+              <th class="text-center">Time</th>
+              <th class="text-center">Call</th>
+              <th class="text-center">Freq</th>
+              <th class="text-center">Mode</th>
+              <th class="text-center">Grid</th>
+              <th class="text-center">Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+                <!-- <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                      aria-hidden="true"></i></a></span>
+                <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                      aria-hidden="true"></i></a></span> -->
+              </td>
+              <!-- <td>
+                <span class="table-remove"><button type="button"
+                    class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+              </td> -->
+            </tr>
+            <!-- This is our clonable table line -->
+            <tr>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+                <!-- <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                      aria-hidden="true"></i></a></span>
+                <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                      aria-hidden="true"></i></a></span> -->
+              <!-- </td> -->
+              <!-- <td> -->
+                <!-- <span class="table-remove"><button type="button"
+                    class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+              </td> -->
+            </tr>
+            <!-- This is our clonable table line -->
+            <tr>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+                <!-- <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                      aria-hidden="true"></i></a></span>
+                <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                      aria-hidden="true"></i></a></span>
+              </td> -->
+              <!-- <td>
+                <span class="table-remove"><button type="button"
+                    class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+              </td> -->
+            </tr>
+            <!-- This is our clonable table line -->
+            <tr class="hide">
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+              <td class="pt-3-half" contenteditable="true"></td>
+                <!-- <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                      aria-hidden="true"></i></a></span>
+                <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                      aria-hidden="true"></i></a></span>
+              </td> -->
+              <!-- <td> -->
+                <!-- <span class="table-remove"><button type="button"
+                    class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+              </td> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
+<!-- Editable table -->
+        
 
 
     
@@ -141,7 +182,9 @@
  <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
  <!-- Your custom scripts (optional) -->
-    <script type="text/javascript" src="js/members.js"></script>
 
+    <script type="text/javascript" src="./js/logbook.js"></script>
+  <!-- MDBootstrap Datatables  -->
+  <script type="text/javascript" src="js/addons/datatables.min.js"></script>
 
 </html>

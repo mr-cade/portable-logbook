@@ -5,7 +5,7 @@ header,
   height: 100%;
 }
 
-@media (max-width: 1199.98px) {
+@media (max-width: 1199px) {
   html,
   body,
   header,
@@ -45,12 +45,12 @@ header,
 }
 
 .row.row-content {
-    margin-top: 250px;
+    margin-top: 350px;
 }
 
-.col-md-12.mb-4.white-text.text-center {
+/* .col-md-12.mb-4.white-text.text-center {
     margin-top: -150px;
-}
+} */
 
 h2 {
     letter-spacing: 6px;
@@ -65,7 +65,22 @@ h5 {
   letter-spacing: 2px;
 }
 
+h3 {
+  color: rgb(252, 241, 98);
+  
+}
+
 .hr-light {
   border-top: 3px solid #fff;
   width: 80px;
 }
+
+.card.card-main {
+  margin-top: 180px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.pt-3-half {
+  padding-top: 1.4rem;
+  }
