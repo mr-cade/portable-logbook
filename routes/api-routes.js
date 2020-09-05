@@ -54,14 +54,7 @@ module.exports = function(app) {
 // routes for actual logbook data
   app.get("/api/logbook", function(req, res){
     db.logbook.findAll({
-      where: {
-        id: {
-          [gt]: 0
-        },
-        id: {
-          [lt]: 1000
-        }
-      }
+      
     }).then(function(dbLogbook){
       res.json(dbLogbook);
     });

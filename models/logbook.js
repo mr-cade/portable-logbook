@@ -3,7 +3,7 @@ var Sequelize = require("sequelize")
 require("../routes/html-routes.js");
 
 module.exports = function (sequelize, DataTypes) {
-  var logbook = sequelize.define("Contact", {
+  var logbook = sequelize.define("logbook", {
     contactTime: DataTypes.TIME,
     callsign: DataTypes.STRING,
     signalIn: DataTypes.INTEGER,
