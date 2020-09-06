@@ -15,5 +15,7 @@ CREATE TABLE logbook (
     contactName VARCHAR (40),
     contactLocation VARCHAR (40),
     contactNotes VARCHAR (250),
+    creationDate TIME NOT NULL,
+    lastUpdateDate TIME NOT NULL,
     PRIMARY KEY (id)
 );
