@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+const { query } = require("express");
 
 module.exports = function(app) {
   // USER ROUTES
@@ -52,10 +53,42 @@ module.exports = function(app) {
 // LOGBOOK ROUTES
 // =========================================================================================================
 // routes for actual logbook data
+// find all contacts
   app.get("/api/logbook", function(req, res){
     db.logbook.findAll({
-      
+      where: query
     }).then(function(dbLogbook){
+      res.json(dbLogbook);
+    });
+  }); 
+
+  // POST for saving a new contact
+  app.post("/api/logbook", function(req, res){
+    db.logbook.create(req.body).then(function(dbLogbook) {
+      res.json(dbLogbook)
+    })
+  });
+
+  // PUT for updating contacts
+  app.put("/api/logbook", function(req, res) {
+    db.logbook.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbLogbook) {
+        res.json(dbLogbook)
+      })
+  });
+
+  // DELETE route to delete contacts
+  app.delete("/api/logbook/:id", function(req, res){
+    db.logbook.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbLogbook) {
       res.json(dbLogbook);
     });
   });
