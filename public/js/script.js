@@ -1,9 +1,10 @@
-var authentication = require("../../config/middleware/isAuthenticated.js")
+var authentication = require("../../config/middleware/isAuthenticated.js");
+const isAuthenticated = require("../../config/middleware/isAuthenticated.js");
 
 $(document).ready(function(){
-if(authentication()) {
-    $(".nav-login").text("Profile")
+if(isAuthenticated) {
+    $("#nav-login").text("Profile")
   } else {
-    $(".nav-login").text("Login")
+    $("#nav-login").text("Login")
   };
 });
