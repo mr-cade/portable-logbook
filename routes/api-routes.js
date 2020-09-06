@@ -55,16 +55,24 @@ module.exports = function(app) {
 // routes for actual logbook data
 // find all contacts
   app.get("/api/logbook", function(req, res){
-    db.logbook.findAll({
-      where: query
-    }).then(function(dbLogbook){
+    db.logbook.findAll({}).then(function(dbLogbook){
       res.json(dbLogbook);
     });
   }); 
 
   // POST for saving a new contact
   app.post("/api/logbook", function(req, res){
-    db.logbook.create(req.body).then(function(dbLogbook) {
+    console.log(req.body)
+    db.logbook.create({
+      contactTime: req.body.contactTime,
+      callsign: req.body.callsign,
+      signalIn: req.body.signalIn,
+      signalOut: req.body.signalOut,
+      frequency: req.body.frequency,
+      contactName: req.body.contactName,
+      contactLocation: req.body.contactLocation,
+      contactNotes: req.body.contactNotes
+    }).then(function(dbLogbook) {
       res.json(dbLogbook)
     })
   });
