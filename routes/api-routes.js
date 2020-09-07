@@ -69,6 +69,7 @@ module.exports = function(app) {
       signalIn: req.body.signalIn,
       signalOut: req.body.signalOut,
       frequency: req.body.frequency,
+      mode: req.body.mode,
       contactName: req.body.contactName,
       contactLocation: req.body.contactLocation,
       contactNotes: req.body.contactNotes
