@@ -5,7 +5,7 @@ header,
   height: 100%;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 740px) {
   html,
   body,
   header,
@@ -45,7 +45,11 @@ header,
 }
 
 .row.row-content {
-    margin-top: 350px;
+    margin-top: 250px;
+}
+
+.col-md-12.mb-4.white-text.text-center {
+    margin-top: -150px;
 }
 
 h2 {
@@ -61,22 +65,11 @@ h5 {
   letter-spacing: 2px;
 }
 
-h3 {
-  color: rgb(252, 241, 98);
-  
-}
-
 .hr-light {
   border-top: 3px solid #fff;
   width: 80px;
 }
 
-.card.card-main {
-  margin-top: 180px;
-  margin-left: 50px;
-  margin-right: 50px;
+.col-xl-5.col-lg-6.col-md-10.col-sm-12.mx-auto {
+    margin-top: 125px;
 }
-
-.pt-3-half {
-  padding-top: 1.4rem;
-  }

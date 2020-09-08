@@ -1,4 +1,13 @@
-const $tableID = $('#table');
+$(document).ready(() => {
+    new WOW().init();
+  });
+
+  // MDB Lightbox Init
+  $(function () {
+    $("#mdb-lightbox-ui").load("../mdb-addons/mdb-lightbox-ui.html");
+  });
+
+  const $tableID = $('#table');
  const $BTN = $('#export-btn');
  const $EXPORT = $('#export');
 
@@ -87,5 +96,3 @@ const $tableID = $('#table');
     $('#dataTable-1').DataTable();
     $('.dataTables_length').addClass('bs-select');
   });
-
-  
