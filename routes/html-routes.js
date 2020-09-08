@@ -52,6 +52,6 @@ module.exports = function (app) {
 
     // here we pull up the user's profile page
     app.get("/profile", isAuthenticated, function(req, res) {
-        res.sendFile(path.join(__dirname, "../public", "profile.html"))
+        res.sendFile(path.join(__dirname, "../public", "profile-page.html"))
     })
 };
