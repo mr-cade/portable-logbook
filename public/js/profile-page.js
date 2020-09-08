@@ -97,4 +97,5 @@ $(document).ready(() => {
     $('.dataTables_length').addClass('bs-select');
   });
 
-  
+  // .ajax post w/object
+  // $.ajax(/api/users).then()
