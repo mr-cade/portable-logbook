@@ -1,9 +1,7 @@
-var authentication = require("../../config/middleware/isAuthenticated.js")
-
-$(document).ready(function(){
-if(authentication()) {
-    $(".nav-login").text("Profile")
-  } else {
-    $(".nav-login").text("Login")
-  };
+$(document).ready(function() {
+  // This file just does a GET request to figure out which user is logged in
+  // and updates the HTML on the page
+  $.get("/api/user_data").then(function(data) {
+    $(".nav-signup").text(data.email);
+  });
 });
