@@ -96,3 +96,5 @@ $(document).ready(() => {
     $('#dataTable-1').DataTable();
     $('.dataTables_length').addClass('bs-select');
   });
+
+  

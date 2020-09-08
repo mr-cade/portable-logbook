@@ -1,175 +1,252 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Ham Radio Logbook</title>
-  
-  <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-  <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-  <!-- Material Design Bootstrap -->
-    <link rel="stylesheet" href="css/mdb.min.css">
-  <!-- Your custom styles (optional) -->
-    <link rel="stylesheet" href="./css/logbook.css">
-  <!-- MDBootstrap Datatables  -->
-  <link href="css/addons/datatables.min.css" rel="stylesheet">
-
+<body>
+  <header>
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="./img/UIHere2 copy.png" height="90" class="d-inline-block align-left" alt="Radio Tower"></a>
-            <a class="navbar-brand" href="/"><strong><h1>HRL</h1></strong></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-                      
-          <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link nav-login" href="./login"><h4>Log-In</h4></a>
-              </li>
-              <li class="nav-item">
-                <div class="vertical"></div>
-                <a class="nav-link nav-signup" href="./signup"><h4>Sign Up</h4></a>
-              </li>
-            </ul>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="./img/UIHere2_copy.png" height="90" class="d-inline-block align-left" alt="Radio Tower"></a>
+        <a class="navbar-brand" href="/"><strong>
+            <h1>HRL</h1>
+          </strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+          aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link nav-login" href="/login">
+                <h4>Log-In</h4>
+              </a>
+            </li>
+            <li class="nav-item">
+              <div class="vertical"></div>
+              <a class="nav-link nav-signup" href="/signup">
+                <h4>Sign Up</h4>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Intro Section -->
+    <div class="view jarallax" data-jarallax='{"speed": 0.2}'
+      style="background-image: url(./img/Ham-Radio.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      <div class="mask rgba-indigo-slight">
+        <div class="container h-100 d-flex justify-content-center align-items-center">
+          <div class="row pt-5 mt-3">
+            <div class="col-md-12 mb-3">
+              <div class="intro-info-content text-center">
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
-<!-- Navbar -->
+      </div>
+    </div>
+  </header>
+  <!--Table-->
 
-      <!-- Full Page Intro -->
-      <div class="view" style="background-image: url('./img/Antenna-Farm.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-    
-
-
-</head>
-<body>
-
-
-<!--Table-->
-    
-    <!-- <div class="table-responsive">
+  <!-- <div class="table-responsive">
     <div class="container-fluid container-1"> -->
 
 
-<!-- Editable table -->
+  <!-- Editable table -->
 
-  <div class="card z-depth-5 card-main">
-    <h3 class="card-header text-center font-weight-bold text-uppercase py-4 morpheus-den-gradient">Logbook</h3>
-    <div class="card-body">
-      <div id="table" class="table-editable">
-        <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
-              class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
-        <table id="dataTable-1" class="table table-bordered table-responsive-md table-striped text-center">
-          <thead>
-            <tr>
-              <th class="text-center">Contact Time (UTC)</th>
-              <th class="text-center">Callsign</th>
-              <th class="text-center">Signal Recieved</th>
-              <th class="text-center">Signal Sent</th>
-              <th class="text-center">Frequency</th>
-              <th class="text-center">Mode</th>
-              <th class="text-center">Contact Name</th>
-              <th class="text-center">Contact Location</th>
-              <th class="text-center">Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each logbook}}
-            <tr>
-              <td class="pt-3-half" >{{contactTime}}</td>
-              <td class="pt-3-half" >{{callsign}}</td>
-              <td class="pt-3-half" >{{signalIn}}</td>
-              <td class="pt-3-half" >{{signalOut}}</td>
-              <td class="pt-3-half" >{{frequency}}</td>
-              <td class="pt-3-half" >{{mode}}</td>
-              <td class="pt-3-half" >{{contactName}}</td>
-              <td class="pt-3-half" >{{contactLocation}}</td>
-              <td class="pt-3-half" >{{contactNotes}}</td>
-                <!-- <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
-                      aria-hidden="true"></i></a></span>
-                <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
-                      aria-hidden="true"></i></a></span> -->
-              <!-- <td>
-                <span class="table-remove"><button type="button"
-                    class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-              </td> -->
-            </tr>
-            {{/each}}
-            <!-- This is our clonable table line -->
-            <tr>
-              <td class="pt-3-half" contenteditable="true">This should be below populated handlebars shit</td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-                <!-- <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
-                      aria-hidden="true"></i></a></span>
-                <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
-                      aria-hidden="true"></i></a></span> -->
-              <!-- </td> -->
-              <!-- <td> -->
-                <!-- <span class="table-remove"><button type="button"
-                    class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-              </td> -->
-            </tr>
-            <!-- This is our clonable table line -->
-            <tr>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-                <!-- <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
-                      aria-hidden="true"></i></a></span>
-                <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
-                      aria-hidden="true"></i></a></span>
-              </td> -->
-              <!-- <td>
-                <span class="table-remove"><button type="button"
-                    class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-              </td> -->
-            </tr>
-            <!-- This is our clonable table line -->
-            <tr class="hide">
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-              <td class="pt-3-half" contenteditable="true"></td>
-                <!-- <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
-                      aria-hidden="true"></i></a></span>
-                <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
-                      aria-hidden="true"></i></a></span>
-              </td> -->
-              <!-- <td> -->
-                <!-- <span class="table-remove"><button type="button"
-                    class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-              </td> -->
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <main>
+
+    <div class="container col-md-10">
+
+      <!--Section: Team v.1-->
+      <section class="text-center team-section">
+
+        <!--Grid row-->
+        <div class="row text-center">
+
+          <!--Grid column-->
+          <div class="col-md-12 mb-4" style="margin-top: -100px;">
+
+            <div class="avatar mx-auto animated rollIn">
+              <img src="./img/Cade.jpg" class="img-fluid rounded-circle z-depth-1" alt="First sample avatar image">
+            </div>
+            <h3 class="my-3 font-weight-bold">
+              <strong>Cade Petersen</strong>
+            </h3>
+            <h2 class="font-weight-bold teal-text mb-4">Ham Radio Enthusiast</h2>
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-12">
+                  <p class="mt-5">Sometimes, you have to go HAM</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+      </section>
+      <!--Section: Team v.1-->
+
+      <!--Section: Tabs-->
+      <section>
+
+        <ul class="nav md-pills pills-default d-flex justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#panel11" role="tab">
+              <h5><strong>Logbook</strong></h5>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#panel12" role="tab">
+              <h5><strong>Map</strong></h5>
+            </a>
+          </li>
+        </ul>
+
+        <!-- LOGBOOK TABLE -->
+        <div class="tab-content">
+          <div class="tab-pane fade  show active" id="panel11" role="tabpanel">
+            <br>
+            <div class="card z-depth-3 card-main">
+              <h3 class="card-header text-center font-weight-bold text-uppercase py-4 morpheus-den-gradient">Logbook
+              </h3>
+              <div class="card-body">
+                <div id="table" class="table-editable">
+                  <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+                        class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
+                  <table id="dataTable-1" class="table table-bordered table-responsive-md table-striped text-center">
+                    <thead>
+                      <tr>
+                        <th class="text-center">Operator Name</th>
+                        <th class="text-center">Date</th>
+                        <th class="text-center">Time</th>
+                        <th class="text-center">Call</th>
+                        <th class="text-center">Freq</th>
+                        <th class="text-center">Mode</th>
+                        <th class="text-center">Grid</th>
+                        <th class="text-center">Country</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {{#each logbook}}
+                      <tr>
+                        <td class="pt-3-half">{{contactTime}}</td>
+                        <td class="pt-3-half">{{callsign}}</td>
+                        <td class="pt-3-half">{{signalIn}}</td>
+                        <td class="pt-3-half">{{signalOut}}</td>
+                        <td class="pt-3-half">{{frequency}}</td>
+                        <td class="pt-3-half">{{mode}}</td>
+                        <td class="pt-3-half">{{contactName}}</td>
+                        <td class="pt-3-half">{{contactLocation}}</td>
+                        <td class="pt-3-half">{{contactNotes}}</td>
+                      </tr>
+                      {{/each}}
+                      <tr>
+                        <td class="pt-3-half" contenteditable="true">first row below handlebars</td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                      </tr>
+                      <!-- This is our clonable table line -->
+                      <tr>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                      </tr>
+                      <!-- This is our clonable table line -->
+                      <tr>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                      </tr>
+                      <!-- This is our clonable table line -->
+                      <tr>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                      </tr>
+                      <!-- This is our clonable table line -->
+                      <tr class="hide">
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LOGBOOK TABLE -->
+
+          <!--Google maps-->
+
+          <div class="tab-pane fade  show active" id="panel12" role="tabpanel">
+            <br>
+            <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+              <iframe src="https://maps.google.com/maps?q=saltlakecity&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+
+
+        <!--Google Maps-->
+
+      </section>
+      <!--Section: Tabs-->
+
     </div>
-  </div>
-<!-- Editable table -->
-        
 
+  </main>
+  <!--Footer-->
+  <footer class="page-footer mdb-color lighten-3 text-center text-md-left">
 
-    
+    <!--Footer Links-->
+    <div class="container">
+
+      <!--First row-->
+      <div class="row">
+        <div class="col-md-12">
+
+          <h5 class="my-5 d-flex justify-content-center">If you want to cooperate with me just send me a message at
+            office@mdbootstrap.com</h5>
+        </div>
+      </div>
+      <!--/First row-->
+    </div>
+    <!--/Footer Links-->
+
+  </footer>
+  <!--/Footer-->
+</body>
