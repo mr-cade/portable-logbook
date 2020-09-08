@@ -4,11 +4,14 @@ $(document).ready(function () {
   $.get("/api/user_data").then(function (data) {
     $(".nav-signup").text(data.email);
   });
-  $.get("api/user_data").then(function (data) {
-    if (data) {
-      $(".nav-login").text("Logout")
-      $(".nav-login").attr("href", "/logout");
-    }
-  }
-  )
+  // $.get("api/user_data").then(function (data) {
+  //   console.log(user.id)
+  //   if (user.id) {
+  //     $(".nav-login").text("Logout")
+  //     $(".nav-login").attr("href", "/logout");
+  //   } else {
+  //     $(".nav-login").text("Login")
+  //   }
+  // }
+  // )
 });
