@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
     callsign:{
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
+      unique: false
     },
     signalIn: {
       type: DataTypes.INTEGER,

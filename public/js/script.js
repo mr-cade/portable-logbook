@@ -7,7 +7,7 @@ $(document).ready(function () {
   $.get("api/user_data").then(function (data) {
     if (data) {
       $(".nav-login").text("Logout")
-      $(".nav-login").attr("href", "/login");
+      $(".nav-login").attr("href", "/logout");
     }
   }
   )
