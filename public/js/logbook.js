@@ -2,6 +2,7 @@ const $tableID = $('#table');
 const $BTN = $('#export-btn');
 const $EXPORT = $('#export');
 
+
 const newTr = `
 <tr class="hide">
   <td class="pt-3-half" contenteditable="true">Example</td>
@@ -16,6 +17,7 @@ const newTr = `
   <td>
     <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0 waves-effect waves-light">Remove</button></span>
   </td>
+
 </tr>`;
 
 $('.table-add').on('click', 'i', () => {
