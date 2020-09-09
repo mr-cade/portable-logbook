@@ -15,15 +15,15 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+            {{!-- <li class="nav-item">
               <a class="nav-link nav-login" href="/login">
                 <h4>Log-In</h4>
               </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
               <div class="vertical"></div>
-              <a class="nav-link nav-signup" href="/signup">
-                <h4>Sign Up</h4>
+              <a class="nav-link nav-logout" href="/api/logout">
+                <h4>Logout</h4>
               </a>
             </li>
           </ul>
@@ -122,14 +122,15 @@
                   <table id="dataTable-1" class="table table-bordered table-responsive-md table-striped text-center">
                     <thead>
                       <tr>
-                        <th class="text-center">Operator Name</th>
-                        <th class="text-center">Date</th>
-                        <th class="text-center">Time</th>
-                        <th class="text-center">Call</th>
-                        <th class="text-center">Freq</th>
+                        <th class="text-center">Contact Time (UTC)</th>
+                        <th class="text-center">Callsign</th>
+                        <th class="text-center">RST Recieved</th>
+                        <th class="text-center">RST Sent</th>
+                        <th class="text-center">Frequency</th>
                         <th class="text-center">Mode</th>
-                        <th class="text-center">Grid</th>
-                        <th class="text-center">Country</th>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Location</th>
+                        <th class="text-center">Notes</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -140,7 +141,7 @@
                         <td class="pt-3-half">{{signalIn}}</td>
                         <td class="pt-3-half">{{signalOut}}</td>
                         <td class="pt-3-half">{{frequency}}</td>
-                        <td class="pt-3-half">{{mode}}</td>
+                        <td class="pt-3-half">{{mde}}</td>
                         <td class="pt-3-half">{{contactName}}</td>
                         <td class="pt-3-half">{{contactLocation}}</td>
                         <td class="pt-3-half">{{contactNotes}}</td>

@@ -3,7 +3,7 @@ var path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
-
+var contacts = require("../models/logbook.js")
 module.exports = function (app) {
 
     app.get("/", function (req, res) {
@@ -44,8 +44,15 @@ module.exports = function (app) {
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
     app.get("/members", isAuthenticated, function (req, res) {
+        contacts.all(function(data){
+            let hbsObject = {
+                contacts: data
+            }
+            console.log(hbsObject);
+            res.render("logbook", hbsObject);
+        })
+        
 
-        res.render("logbook")
 
         // res.sendFile(path.join(__dirname,"../views","logbook.handlebars"));
     });
