@@ -1,15 +1,40 @@
-$("#password").on("focusout", function () {
-    if ($(this).val() != $("#password2").val()) {
-      $("#password2").removeClass("valid").addClass("invalid");
-    } else {
-      $("#password2").removeClass("invalid").addClass("valid");
-    }
-  });
+$(document).ready(function() {
+    // Getting references to our form and inputs
+    var loginForm = $("form.login");
+    var emailInput = $("input#email-input");
+    var passwordInput = $("input#password-input");
   
-  $("#password2").on("keyup", function () {
-    if ($("#password").val() != $(this).val()) {
-      $(this).removeClass("valid").addClass("invalid");
-    } else {
-      $(this).removeClass("invalid").addClass("valid");
+    // When the form is submitted, we validate there's an email and password entered
+    loginForm.on("submit", function(event) {
+      event.preventDefault();
+      var userData = {
+        email: emailInput.val().trim(),
+        password: passwordInput.val().trim()
+      };
+  
+      if (!userData.email || !userData.password) {
+        return;
+      }
+  
+      // If we have an email and password we run the loginUser function and clear the form
+      loginUser(userData.email, userData.password);
+      emailInput.val("");
+      passwordInput.val("");
+    });
+  
+    // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
+    function loginUser(email, password) {
+      $.post("/api/login", {
+        email: email,
+        password: password
+      })
+        .then(function() {
+          window.location.replace("/members");
+          // If there's an error, log the error
+        })
+        .catch(function(err) {
+          console.log(err);
+          alert("No user found. Please check your login information or signup for a free account.");
+        });
     }
   });
