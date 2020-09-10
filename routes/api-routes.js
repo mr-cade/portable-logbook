@@ -58,6 +58,7 @@ module.exports = function(app) {
   app.get("/api/logbook", function(req, res){
     db.logbook.findAll({}).then(function(dbLogbook){
       res.json(dbLogbook);
+
     });
   }); 
 
