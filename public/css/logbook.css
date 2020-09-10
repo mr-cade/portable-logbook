@@ -78,6 +78,8 @@ h5 {
   margin-bottom: 75px;
 }
 
-.page-footer.mdb-color.lighten-3.text-center.text-md-left {
+.page-footer.mdb-color.lighten-3.text-center.text-md-left{
   background-color: #899093 !important;
+  bottom: 0;
+
 }
