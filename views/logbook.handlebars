@@ -136,15 +136,15 @@
                     <tbody>
                       {{#each logbook}}
                       <tr>
-                        <td class="pt-3-half">{{contactTime}}</td>
-                        <td class="pt-3-half">{{callsign}}</td>
-                        <td class="pt-3-half">{{signalIn}}</td>
-                        <td class="pt-3-half">{{signalOut}}</td>
-                        <td class="pt-3-half">{{frequency}}</td>
-                        <td class="pt-3-half">{{mde}}</td>
-                        <td class="pt-3-half">{{contactName}}</td>
-                        <td class="pt-3-half">{{contactLocation}}</td>
-                        <td class="pt-3-half">{{contactNotes}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.contactTime}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.callsign}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.signalIn}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.signalOut}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.frequency}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.mde}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.contactName}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.contactLocation}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.contactNotes}}</td>
                       </tr>
                       {{/each}}
                       <tr>
@@ -156,6 +156,7 @@
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>                        
                       </tr>
                       <!-- This is our clonable table line -->
                       <tr>
@@ -167,20 +168,11 @@
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
-                      </tr>
-                      <!-- This is our clonable table line -->
-                      <tr>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                       </tr>
                       <!-- This is our clonable table line -->
                       <tr>
+                        <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
@@ -192,6 +184,7 @@
                       </tr>
                       <!-- This is our clonable table line -->
                       <tr class="hide">
+                        <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
