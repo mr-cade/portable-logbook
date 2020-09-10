@@ -136,15 +136,15 @@
                     <tbody>
                       {{#each logbook}}
                       <tr>
-                        <td class="pt-3-half">{{dbLogbook.contactTime}}</td>
-                        <td class="pt-3-half">{{dbLogbook.callsign}}</td>
-                        <td class="pt-3-half">{{dbLogbook.signalIn}}</td>
-                        <td class="pt-3-half">{{dbLogbook.signalOut}}</td>
-                        <td class="pt-3-half">{{dbLogbook.frequency}}</td>
-                        <td class="pt-3-half">{{dbLogbook.mde}}</td>
-                        <td class="pt-3-half">{{dbLogbook.contactName}}</td>
-                        <td class="pt-3-half">{{dbLogbook.contactLocation}}</td>
-                        <td class="pt-3-half">{{dbLogbook.contactNotes}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.contactTime}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.callsign}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.signalIn}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.signalOut}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.frequency}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.mde}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.contactName}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.contactLocation}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.contactNotes}}</td>
                       </tr>
                       {{/each}}
                       <tr>
@@ -156,6 +156,7 @@
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>                        
                       </tr>
                       <!-- This is our clonable table line -->
                       <tr>
@@ -167,20 +168,11 @@
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
-                      </tr>
-                      <!-- This is our clonable table line -->
-                      <tr>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                       </tr>
                       <!-- This is our clonable table line -->
                       <tr>
+                        <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
@@ -192,6 +184,7 @@
                       </tr>
                       <!-- This is our clonable table line -->
                       <tr class="hide">
+                        <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>

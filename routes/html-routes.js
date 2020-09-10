@@ -25,7 +25,6 @@ module.exports = function (app) {
         } else {
             res.sendFile(path.join(__dirname, "../public", "signup.html"))
         }
-        // res.send('Hi Hello How are ya')
     });
 
     app.get("/login", function (req, res) {
