@@ -2,12 +2,13 @@
 var path = require("path");
 const { query } = require("express");
 
-
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
-var db = require("../models/logbook.js")
-module.exports = function (app) {
 
+// require models
+var db = require("../models")
+
+module.exports = function (app) {
     app.get("/", function (req, res) {
         //  If the user already has an account send them to the members page
         if (req.user) {
@@ -39,12 +40,12 @@ module.exports = function (app) {
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
     app.get("/members", function (req, res) {
-        console.log("data:", db);
+        // console.log("data:", db.logbook);
         db.logbook.findAll({}).then(function (dbLogbook) {
-            res.render("logbook", {dbLogbook});
+            console.log(dbLogbook);
+            res.render("logbook", {logbook:dbLogbook});
         });
     });
-
 
     // here we pull up the user's profile page
     app.get("/profile", isAuthenticated, function (req, res) {
