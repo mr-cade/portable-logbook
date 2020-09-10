@@ -3,6 +3,8 @@ body,
 header,
 .view {
   height: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 @media (max-width: 1199px) {
@@ -13,7 +15,6 @@ header,
     height: 100vh;
   }
 }
-
 
 .top-nav-collapse {
   background-color: #78909c !important;
@@ -33,7 +34,7 @@ header,
 }
 
 .vertical {
-    border-left: 2px solid white; 
+    border-left: 2px solid rgb(0, 0, 0); 
     height: 55px; 
     position: absolute; 
 }
@@ -55,15 +56,16 @@ h2 {
 h1 {
   letter-spacing: 8px;
   margin-left: 10px;
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+}
+
+h4 {
+  color: #000;
 }
 
 h5 {
   letter-spacing: 2px;
-}
-
-h3 {
-  color: rgb(252, 241, 98);
-  
 }
 
 .hr-light {
@@ -71,12 +73,11 @@ h3 {
   width: 80px;
 }
 
-.card.card-main {
+.container.container-1 {
   margin-top: 180px;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-bottom: 75px;
 }
 
-.pt-3-half {
-  padding-top: 1.4rem;
-  }
+.page-footer.mdb-color.lighten-3.text-center.text-md-left {
+  background-color: #899093 !important;
+}
