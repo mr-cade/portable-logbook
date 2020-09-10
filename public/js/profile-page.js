@@ -1,6 +1,6 @@
-$(document).ready(() => {
-    new WOW().init();
-  });
+// $(document).ready(() => {
+//     new WOW().init();
+//   });
 
   // MDB Lightbox Init
   $(function () {
@@ -97,6 +97,8 @@ $(document).ready(() => {
     $('.dataTables_length').addClass('bs-select');
   });
 
+
+  
   $(document).ready(function () {
     // This file just does a GET request to figure out which user is logged in
     // and updates the HTML on the page
