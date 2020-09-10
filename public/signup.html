@@ -15,16 +15,16 @@
   <!-- Material Design Bootstrap -->
   <link rel="stylesheet" href="css/mdb.min.css">
   <!-- Your custom styles (optional) -->
-  <link rel="stylesheet" href="/Public/css/signup.css">
+  <link rel="stylesheet" href="css/signup.css">
 </head>
 
 <body>
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="/Public/img/UIHere2 copy.png" height="90" class="d-inline-block align-left" alt="Radio Tower"></a>
-        <a class="navbar-brand" href="#"><strong><h1>HRL</h1></strong></a>
+      <a class="navbar-brand" href="/">
+        <img src="./img/UIHere2_copy.png" height="90" class="d-inline-block align-left" alt="Radio Tower"></a>
+        <a class="navbar-brand" href="/"><strong><h1>HRL</h1></strong></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -32,11 +32,11 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link nav-login" href="#"><h4>Log-In</h4></a>
+            <a class="nav-link nav-login" href="/login"><h4>Log-In</h4></a>
           </li>
           <li class="nav-item">
             <div class="vertical"></div>
-            <a class="nav-link nav-signup" href="#"><h4>Sign Up</h4></a>
+            <a class="nav-link nav-signup" href="/signup"><h4>Sign Up</h4></a>
           </li>
         </ul>
       </div>
@@ -67,28 +67,29 @@
                     <div class="form-header primary-color">
                       <h3 class="font-weight-500 my-2 py-1"><i class="fas fa-plus"></i> Create Account</h3>
                     </div>
-                    <form method="POST" action="#whereeverYouWant">
+                    <!-- <form method="POST" action="#whereeverYouWant"> -->
+                    <form class="signup">
                       <!-- Register Form-->
                       <div class="md-form">
                         <i class="fas fa-envelope prefix grey-text d-flex"></i>
-                        <input type="email" id="email" name="email" class="form-control validate">
-                        <label for="email" class="d-flex">Your email</label>
+                        <input type="email" id="email-input" name="email" class="form-control validate" placeholder="Your Email">
+                        <label for="email" class="d-flex"></label>
                       </div>
 
                       <div class="md-form">
                         <i class="fas fa-lock prefix grey-text d-flex"></i>
-                        <input type="password" id="password" name="password" class="form-control validate">
-                        <label for="password" class="d-flex">Your password</label>
+                        <input type="password" id="password-input" name="password" class="form-control validate" placeholder="Password">
+                        <label for="password" class="d-flex"></label>
                       </div>
                       <div class="md-form">
                         <i class="fas fa-lock prefix grey-text d-flex"></i>
-                        <input type="password" id="password2" name="password2" class="form-control">
-                        <label for="password2" class="d-flex">Confirm password</label>
+                        <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password">
+                        <label for="password2" class="d-flex"></label>
                       </div>
 
                       <div class="d-flex justify-content-end">
                         <!-- Triggering button -->
-                        <a class="rotate-btn text-primary" data-card="my-card" tabIndex="-3">back to login</a>
+                        <a class="rotate-btn text-primary" data-card="my-card" tabIndex="-3" href="/login">back to login</a>
                       </div>
 
                       <div class="text-center">
@@ -101,9 +102,6 @@
                 <!-- Back Side -->
               </div>
             </div>
-            
-    
-            
           </div>
         </div>
       </div>
@@ -119,7 +117,7 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Your custom scripts (optional) -->
-  <script type="text/javascript" src="/Public/js/signup.js"></script>
+  <script type="text/javascript" src="js/signup.js"></script>
 
 </body>
 
