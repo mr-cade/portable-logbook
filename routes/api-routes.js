@@ -86,7 +86,7 @@ module.exports = function(app) {
       req.body,
       {
         where: {
-          id: req.body.id
+          id: req.params.id
         }
       }).then(function(dbLogbook) {
         res.json(dbLogbook)
