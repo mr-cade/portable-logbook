@@ -36,6 +36,10 @@ module.exports = function (app) {
 
     });
 
+    app.get("/profile-edit", isAuthenticated, function (req, res) {
+        res.sendFile(path.join(__dirname, "../public", "profile-edit.html"));
+    });
+
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
     app.get("/members", isAuthenticated, function (req, res) {
@@ -44,9 +48,17 @@ module.exports = function (app) {
             res.render("logbook", {logbook:dbLogbook});
         });
     });
+    
+    app.get("/profile", isAuthenticated, function (req, res) {
+        db.profile.findAll({}).then(function (dbProfile) {
+            console.log(dbProfile);
+            res.render("profile", {profile:dbProfile});
+        });
+    });
+
 
     // here we pull up the user's profile page
-    app.get("/profile", isAuthenticated, function (req, res) {
-        res.sendFile(path.join(__dirname, "../public", "profile.html"))
-    })
+//     app.get("/profile", isAuthenticated, function (req, res) {
+//         res.sendFile(path.join(__dirname, "../public", "profile.html"))
+//     })
 };
