@@ -3,41 +3,41 @@ var db = require("../models");
 var passport = require("../config/passport");
 const { query } = require("express");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // USER ROUTES
   // =========================================================================================================
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+  app.post("/api/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  
-  app.post("/api/signup", function(req, res) {
+
+  app.post("/api/signup", function (req, res) {
     db.User.create({
       email: req.body.email,
       password: req.body.password
     })
-      .then(function() {
+      .then(function () {
         res.redirect(307, "/api/login");
       })
-      .catch(function(err) {
+      .catch(function (err) {
         res.status(401).json(err);
       });
   });
 
   // Route for logging user out
-  app.get("/api/logout", function(req, res) {
+  app.get("/api/logout", function (req, res) {
     req.logout();
     res.redirect("/");
   });
-  
+
   // Route for getting some data about our user to be used client side
-  app.get("/api/user_data", function(req, res) {
+  app.get("/api/user_data", function (req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
@@ -50,20 +50,20 @@ module.exports = function(app) {
       });
     }
   });
-  
-// LOGBOOK ROUTES
-// =========================================================================================================
-// routes for actual logbook data
-// find all contacts
-  app.get("/api/logbook", function(req, res){
-    db.logbook.findAll({}).then(function(dbLogbook){
+
+  // LOGBOOK ROUTES
+  // =========================================================================================================
+  // routes for actual logbook data
+  // find all contacts
+  app.get("/api/logbook", function (req, res) {
+    db.logbook.findAll({}).then(function (dbLogbook) {
       res.json(dbLogbook);
 
     });
-  }); 
+  });
 
   // POST for saving a new contact
-  app.post("/api/logbook", function(req, res){
+  app.post("/api/logbook", function (req, res) {
     console.log(req.body)
     db.logbook.create({
       contactTime: req.body.contactTime,
@@ -75,31 +75,57 @@ module.exports = function(app) {
       contactName: req.body.contactName,
       contactLocation: req.body.contactLocation,
       contactNotes: req.body.contactNotes
-    }).then(function(dbLogbook) {
+    }).then(function (dbLogbook) {
       res.json(dbLogbook)
     })
   });
 
   // PUT for updating contacts
-  app.put("/api/logbook", function(req, res) {
+  app.put("/api/logbook", function (req, res) {
     db.logbook.update(
       req.body,
       {
         where: {
           id: req.params.id
         }
-      }).then(function(dbLogbook) {
+      }).then(function (dbLogbook) {
         res.json(dbLogbook)
       })
   });
 
+  // post for creating profile
+  app.post("/api/profile", function (req, res) {
+    db.profile.create(
+      req.body,
+      {
+        where: {
+          id: req.params.id
+        }
+      }).then(function (dbProfile) {
+        res.json(dbProfile)
+      })
+  });
+
+  // PUT for updating profile
+  app.put("/api/profile", function (req, res) {
+    db.profile.update(
+      req.body,
+      {
+        where: {
+          id: req.params.id
+        }
+      }).then(function (dbProfile) {
+        res.json(dbProfile)
+      })
+  });
+
   // DELETE route to delete contacts
-  app.delete("/api/logbook/:id", function(req, res){
+  app.delete("/api/logbook/:id", function (req, res) {
     db.logbook.destroy({
       where: {
         id: req.params.id
       }
-    }).then(function(dbLogbook) {
+    }).then(function (dbLogbook) {
       res.json(dbLogbook);
     });
   });
