@@ -1,7 +1,5 @@
 var Sequelize = require("sequelize")
 
-require("../routes/html-routes.js");
-
 module.exports = function (sequelize, DataTypes) {
   var logbook = sequelize.define("logbook", {
     contactTime: {
