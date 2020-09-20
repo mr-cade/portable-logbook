@@ -2,12 +2,13 @@
 var path = require("path");
 const { query } = require("express");
 
-
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
-var db = require("../models/logbook.js")
-module.exports = function (app) {
 
+// require models
+var db = require("../models")
+
+module.exports = function (app) {
     app.get("/", function (req, res) {
         //  If the user already has an account send them to the members page
         if (req.user) {
@@ -24,7 +25,6 @@ module.exports = function (app) {
         } else {
             res.sendFile(path.join(__dirname, "../public", "signup.html"))
         }
-        // res.send('Hi Hello How are ya')
     });
 
     app.get("/login", function (req, res) {
@@ -36,18 +36,29 @@ module.exports = function (app) {
 
     });
 
+    app.get("/profile-edit", isAuthenticated, function (req, res) {
+        res.sendFile(path.join(__dirname, "../public", "profile-edit.html"));
+    });
+
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
-    app.get("/members", function (req, res) {
-        console.log("data:", db);
+    app.get("/members", isAuthenticated, function (req, res) {
         db.logbook.findAll({}).then(function (dbLogbook) {
-            res.render("logbook", {dbLogbook});
+            console.log(dbLogbook);
+            res.render("logbook", {logbook:dbLogbook});
+        });
+    });
+    
+    app.get("/profile", isAuthenticated, function (req, res) {
+        db.profile.findAll({}).then(function (dbProfile) {
+            console.log(dbProfile);
+            res.render("profile", {profile:dbProfile});
         });
     });
 
 
     // here we pull up the user's profile page
-    app.get("/profile", isAuthenticated, function (req, res) {
-        res.sendFile(path.join(__dirname, "../public", "profile-page.html"))
-    })
+//     app.get("/profile", isAuthenticated, function (req, res) {
+//         res.sendFile(path.join(__dirname, "../public", "profile.html"))
+//     })
 };

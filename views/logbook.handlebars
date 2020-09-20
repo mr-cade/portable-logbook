@@ -136,29 +136,18 @@
                     <tbody>
                       {{#each logbook}}
                       <tr>
-                        <td class="pt-3-half">{{contactTime}}</td>
-                        <td class="pt-3-half">{{callsign}}</td>
-                        <td class="pt-3-half">{{signalIn}}</td>
-                        <td class="pt-3-half">{{signalOut}}</td>
-                        <td class="pt-3-half">{{frequency}}</td>
-                        <td class="pt-3-half">{{mde}}</td>
-                        <td class="pt-3-half">{{contactName}}</td>
-                        <td class="pt-3-half">{{contactLocation}}</td>
-                        <td class="pt-3-half">{{contactNotes}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.contactTime}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.callsign}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.signalIn}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.signalOut}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.frequency}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.mde}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.contactName}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.contactLocation}}</td>
+                        <td class="pt-3-half" contenteditable="false">{{this.dataValues.contactNotes}}</td>
                       </tr>
                       {{/each}}
                       <tr>
-                        <td class="pt-3-half" contenteditable="true">first row below handlebars</td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                      </tr>
-                      <!-- This is our clonable table line -->
-                      <tr>
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
@@ -167,39 +156,7 @@
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
-                      </tr>
-                      <!-- This is our clonable table line -->
-                      <tr>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                      </tr>
-                      <!-- This is our clonable table line -->
-                      <tr>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                      </tr>
-                      <!-- This is our clonable table line -->
-                      <tr class="hide">
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half" contenteditable="true"></td>                        
                       </tr>
                     </tbody>
                   </table>
@@ -211,16 +168,15 @@
           <!-- LOGBOOK TABLE -->
 
           <!--Google maps-->
-
-          <div class="tab-pane fade  show active" id="panel12" role="tabpanel">
-            <br>
-            <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-              <iframe src="https://maps.google.com/maps?q=saltlakecity&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
+      
+        <div class="tab-pane fade  show active" id="panel12" role="tabpanel">
+          <br>
+          <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+            <iframe src="https://maps.google.com/maps?q=saltlakecity&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+              style="border:0" allowfullscreen></iframe>
           </div>
         </div>
-
+    </div>
 
         <!--Google Maps-->
 
