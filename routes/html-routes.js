@@ -21,7 +21,7 @@ module.exports = function (app) {
     app.get("/signup", function (req, res) {
         //  If the user already has an account send them to the members page
         if (req.user) {
-            res.redirect("/members");
+            res.redirect("/profile");
         } else {
             res.sendFile(path.join(__dirname, "../public", "signup.html"))
         }
@@ -44,14 +44,14 @@ module.exports = function (app) {
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
     app.get("/members", isAuthenticated, function (req, res) {
         db.logbook.findAll({}).then(function (dbLogbook) {
-            console.log(dbLogbook);
+            // console.log(dbLogbook);
             res.render("logbook", {logbook:dbLogbook});
         });
     });
     
     app.get("/profile", isAuthenticated, function (req, res) {
         db.profile.findAll({}).then(function (dbProfile) {
-            console.log(dbProfile);
+            // console.log(dbProfile);
             res.render("profile", {profile:dbProfile});
         });
     });

@@ -54,8 +54,10 @@
                     </div>
                     <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                       <div class="text-center text-sm-left mb-2 mb-sm-0">
-                        <h3 class="pt-sm-2 pb-1 mb-0 text-nowrap">Name{{this.profile.dataValues.firstName}}</h3>
-                        <p class="mb-0">Email {{profile.email}}</p>
+                        {{#each profile}}
+                        <h3 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{this.dataValues.firstName}} {{this.dataValues.lastName}}</h3>
+                        <p class="mb-0">{{this.dataValues.email}}</p>
+                        
                       </div>
                     </div>
                   </div>
@@ -67,19 +69,20 @@
                             <div class="row">
                               <div class="col">
                                 <div class="form-group">
-                                  <label>Full Name</label>
+                                  <label>{{this.dataValues.firstName}} {{this.dataValues.lastName}}</label>
                                 </div>
                               </div>
                             </div>
                             <div class="row">
                               <div class="col mb-3">
                                 <div class="form-group">
-                                  <label>Bio</label>
+                                  <label>{{this.dataValues.bio}}</label>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
+                        {{/each}}
                         <div class="row">
                           <div class="col d-flex justify-content-center">  
                             <button class="btn btn-secondary">
@@ -112,7 +115,7 @@
         <div class="col-md-12">
 
           <h5 class="my-5 d-flex justify-content-center">
-            <a href = "mailto: CadePeterson@gmail.com">Contact Us</a></h5>
+            <a href = "mailto: CadelPetersen@gmail.com">Contact Us</a></h5>
         </div>
       </div>
       <!--/First row-->

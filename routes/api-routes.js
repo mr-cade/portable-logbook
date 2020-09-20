@@ -93,6 +93,25 @@ module.exports = function (app) {
       })
   });
 
+  // DELETE route to delete contacts
+  app.delete("/api/logbook/:id", function (req, res) {
+    db.logbook.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbLogbook) {
+      res.json(dbLogbook);
+    });
+  });
+
+
+  // get profile data
+  app.get("/api/profile", function (req, res) {
+    db.profile.findAll({}).then(function (dbProfile) {
+      res.json(dbProfile);
+    });
+  });
+
   // post for creating profile
   app.post("/api/profile", function (req, res) {
     db.profile.create(
@@ -119,14 +138,5 @@ module.exports = function (app) {
       })
   });
 
-  // DELETE route to delete contacts
-  app.delete("/api/logbook/:id", function (req, res) {
-    db.logbook.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function (dbLogbook) {
-      res.json(dbLogbook);
-    });
-  });
+
 };
