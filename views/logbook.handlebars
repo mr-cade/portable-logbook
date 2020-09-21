@@ -131,6 +131,8 @@
                         <th class="text-center">Name</th>
                         <th class="text-center">Location</th>
                         <th class="text-center">Notes</th>
+                        <th class="text-center">Save</th>
+
                       </tr>
                     </thead>
                     <tbody>
@@ -145,6 +147,7 @@
                         <td class="pt-3-half" contenteditable="false">{{this.dataValues.contactName}}</td>
                         <td class="pt-3-half" contenteditable="false">{{this.dataValues.contactLocation}}</td>
                         <td class="pt-3-half" contenteditable="false">{{this.dataValues.contactNotes}}</td>
+                        <td class="pt-3-half"><button class="btn btn-sm my-0 btn-success" type="submit">Delete</button>
                       </tr>
                       {{/each}}
                       <tr>
@@ -156,7 +159,9 @@
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
                         <td class="pt-3-half" contenteditable="true"></td>
-                        <td class="pt-3-half" contenteditable="true"></td>                        
+                        <td class="pt-3-half" contenteditable="true"></td>
+                        <td class="pt-3-half"><button class="btn btn-sm my-0 btn-success" type="submit">Save</button>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -168,15 +173,15 @@
           <!-- LOGBOOK TABLE -->
 
           <!--Google maps-->
-      
-        <div class="tab-pane fade  show active" id="panel12" role="tabpanel">
-          <br>
-          <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-            <iframe src="https://maps.google.com/maps?q=saltlakecity&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-              style="border:0" allowfullscreen></iframe>
+
+          <div class="tab-pane fade  show active" id="panel12" role="tabpanel">
+            <br>
+            <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+              <iframe src="https://maps.google.com/maps?q=saltlakecity&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
           </div>
         </div>
-    </div>
 
         <!--Google Maps-->
 

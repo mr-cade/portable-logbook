@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // references to the form and inputs
     var profileChangeForm = $("form#profile-edit")
     var nameInput = $("#name-input")
@@ -11,7 +11,7 @@ $(document).ready(function() {
 
     var updating = false;
 
-    profileChangeForm.on("submit", function() {
+    profileChangeForm.on("submit", function () {
         var updatedProfile = {
             name: nameInput.val().trim(),
             label: labelInput.val().trim(),
@@ -26,13 +26,18 @@ $(document).ready(function() {
         if (updating) {
             // newPost.id = postId;
             updatePost(updatedProfile);
-          }
-          else {
-            submitPost(updatedProfile);
-          }
-        });
-
-        function updatePost(profile) {
-            
         }
-    })
+        else {
+            submitPost(updatedProfile);
+        }
+    });
+
+    // create update and submit functions
+    function updatePost(updatedProfile){
+        $.post("/api/profile", {updatedProfile})
+    }
+
+    function submitPost(updatedProfile){
+        $.post()
+    }
+})
